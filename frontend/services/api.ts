@@ -3,6 +3,7 @@
  */
 
 const API_BASE = process.env.EXPO_PUBLIC_API_URL || "http://localhost:8000";
+const SMS_API_BASE = process.env.EXPO_PUBLIC_SMS_API_URL || "https://billetera-digital.onrender.com";
 
 interface ApiResponse<T> {
   data: T;
@@ -108,6 +109,16 @@ export const api = {
       method: "POST",
       body: JSON.stringify({ subject, body, message_id: messageId }),
     }),
+
+  // SMS Processing (direct to production API)
+  processSms: (message: string) => {
+    const url = `${SMS_API_BASE}/api/sms/process`;
+    return fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message }),
+    }).then(res => res.json());
+  },
 };
 
 export type { Transaction, DashboardStats, Category };
