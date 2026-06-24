@@ -1,0 +1,19 @@
+# Billetera Digital - Roadmap de Funcionalidad Total
+
+## ✅ Tareas Completadas
+- [x] Eliminación de MOCK_STATS en DashboardScreen (frontend).
+- [x] Implementación de estados de carga (ActivityIndicator) en el frontend.
+- [x] Implementación de estados vacíos (empty states) cuando no hay transacciones.
+- [x] Eliminación de MOCK_TRANSACTIONS en TransactionsScreen.
+- [x] Limpieza de ejemplos de prueba en ProcessScreen (SAMPLE_EMAIL).
+- [x] Eliminación de archivos legados (index.html, script.js, styles.css) del directorio raíz.
+- [x] Verificación de conexión con Supabase (tablas 'categories' y 'transactions' activas).
+
+## 🚀 Próximos Pasos para 100% Funcionalidad
+1. **Configurar OpenAI API Key**: Actualmente está en 'your_openai_api_key_here' en el .env. Es necesaria para el enriquecimiento inteligente de transacciones.
+2. **Prueba de Sincronización Real**: Enviar un correo de prueba de Bancolombia a la cuenta configurada y verificar que el background task lo procese.
+3. **Validación de Categorización IA**: Verificar que la IA asigne correctamente las categorías de Supabase.
+
+## Como correr el proyecto:
+- **Backend**: `cd backend && venv\Scripts\activate && uvicorn app.main:app --reload`
+- **Frontend**: `cd frontend && pnpm start`

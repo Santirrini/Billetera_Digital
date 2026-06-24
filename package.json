@@ -1,0 +1,9 @@
+{
+  "name": "billetera-digital",
+  "private": true,
+  "scripts": {
+    "dev:backend": "cd backend && .\\venv\\Scripts\\python.exe -m uvicorn app.main:app --reload",
+    "dev:frontend": "cd frontend && pnpm start",
+    "dev": "pnpm run /^dev:/"
+  }
+}
